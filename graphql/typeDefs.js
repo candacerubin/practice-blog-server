@@ -47,6 +47,16 @@ module.exports = gql`
 		updatedAt: String
 	}
 
+	# Blog input types
+	input NewBlogInput {
+		userId: ID!
+		title: String!
+		text: String!
+		categories: [String]
+		keywords: [String]
+	}
+
+	# User input types
 	input RegisterInput {
 		email: String!
 		displayName: String!
@@ -71,8 +81,12 @@ module.exports = gql`
 	}
 
 	type Query {
+		# Users
 		getUser(userId: ID!): User
 		getUsers: [User]
+
+		#Blogs
+		getBlogs: [Blog]
 	}
 
 	type Mutation {
@@ -83,5 +97,8 @@ module.exports = gql`
 		# User
 		updatePassword(updatePasswordInput: UpdatePasswordInput): User
 		updateUser(updateUserInput: UpdateUserInput): User
+
+		# Blogs
+		createNewBlog(newBlogInput: NewBlogInput): Blog
 	}
 `;

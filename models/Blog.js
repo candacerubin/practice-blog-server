@@ -1,16 +1,19 @@
 const { Schema, model } = require('mongoose');
-const Populate = require('../util/autoPopulate');
+const Populate = require('../util/autoPopulate.js');
 
 const blogSchema = new Schema(
 	{
 		userId: {
 			type: String,
+			required: true,
 		},
 		title: {
 			type: String,
+			required: true,
 		},
 		text: {
 			type: String,
+			required: true,
 		},
 		categories: {
 			type: Array,
@@ -32,7 +35,7 @@ const blogSchema = new Schema(
 			type: [
 				{
 					type: Schema.Types.ObjectId,
-					ref: 'Comment',
+					ref: 'Like',
 				},
 			],
 			default: [],

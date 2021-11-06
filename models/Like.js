@@ -2,7 +2,7 @@ const { Schema, model } = require('mongoose');
 
 const likeSchema = new Schema(
 	{
-		usesrId: {
+		userId: {
 			type: String,
 		},
 	},

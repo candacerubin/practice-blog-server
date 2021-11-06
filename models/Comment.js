@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const Populate = require('../util/autoPopulate');
+const Populate = require('../util/autoPopulate.js');
 
 const commentSchema = new Schema(
 	{
@@ -13,7 +13,7 @@ const commentSchema = new Schema(
 			type: [
 				{
 					type: Schema.Types.ObjectId,
-					ref: 'Comment',
+					ref: 'Like',
 				},
 			],
 			default: [],

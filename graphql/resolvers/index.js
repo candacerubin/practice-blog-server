@@ -1,5 +1,5 @@
 const userResolvers = require('./users');
-const blogResolvers = require('./users');
+const blogResolvers = require('./blogs');
 
 module.exports = {
 	Query: {
