@@ -11,6 +11,18 @@ const userSchema = new Schema(
 			type: String,
 			required: true,
 		},
+		blogs: {
+			type: Array,
+			default: [],
+		},
+		following: {
+			type: Array,
+			default: [],
+		},
+		bookmarks: {
+			type: Array,
+			default: [],
+		},
 		googleId: {
 			type: String,
 			default: '',
